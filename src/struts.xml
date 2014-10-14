@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" namespace="/" extends="struts-default">
+    <default-action-ref name="default"></default-action-ref>
+		<action name="default">
+			<result>index.jsp</result>
+		</action>
+        <action name="search" class="com.library.action.BookAction" method="query">
+            <result>/query.jsp</result>
+            <result name="input">/query.jsp</result>
+        </action>
+        <action name="getdata" class="com.library.action.BA_DataAction" method="getdata">
+			<result>/BA_Data.jsp</result>
+		</action>
+		<action name="delete" class="com.library.action.BookAction" method="delete">
+			<result>/query.jsp</result>
+		</action>
+		<action name="update" class="com.library.action.BookAction" method="update">
+			<result>/Success.jsp</result>
+			<result name = "input">/update.jsp</result>
+		</action>
+		<action name="add" class="com.library.action.BookAction" method="add">
+			<result>/Success.jsp</result>
+			<result name = "input">/add.jsp</result>
+		</action>
+    </package>
+</struts>
